@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户登录</title>
+  </head>
+
+  <style>
+    body {
+      margin: 0px;
+      height: 100vh;
+      background-image: linear-gradient(to right bottom, #ffcbcb, #ffffff);
+      /* 从左上角到右下角颜色渐变 */
+    }
+
+    .xian {
+      border: 1px solid #a2a2a2;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .column {
+      flex-direction: column;
+    }
+
+    .Baise {
+      background-color: white;
+    }
+
+    .color {
+      flex-direction: column;
+    }
+
+    .Yy {
+      box-shadow: rgb(0 0 0 / 30%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 20%) 0px 1px 1px 0px, rgb(0 0 0 / 25%) 0px 1px 3px 0px;
+      border-radius: 8px;
+    }
+
+    .mg8 {
+      margin: 8px;
+    }
+
+    .avatar {
+      width: 300px;
+      /* 或者你想要的任何宽度 */
+      height: 300px;
+      /* 和宽度相同以形成圆形 */
+      border-radius: 50%;
+      /* 圆形效果 */
+    }
+
+    .JZ {
+      position: absolute;
+    }
+
+    .zi {
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .zi2 {
+      font-size: 14px;
+      line-height: 50px;
+      padding-left: 10px;
+    }
+
+    .yiebian {
+      align-items: flex-start;
+      /* 垂直靠顶部 */
+    }
+
+    .dialog {
+      width: 300px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    .dialog-title {
+      text-align: center;
+      font-weight: bold;
+    }
+    .dialog-content {
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+
+  <body>
+    <div
+      style="height: 600px; width: 400px"
+      class="flex column Baise Yy mg8 JZ"
+    >
+      <!-- 欢迎词 -->
+      <div
+        style="height: 50px; width: 300px; color: rgb(90, 0, 48)"
+        class="zi bold-text yiebian"
+      >
+        welcome to 小芙卓灵!
+      </div>
+      <div style="height: 200px; width: 300px mg8 Yy">
+        <!-- 用户登录 -->
+        <div
+          style="height: 50px; width: 250px; color: #a2a2a2"
+          class="Baise mg8 Yy xian zi2"
+        >
+          用户账号
+        </div>
+        <!-- 密码栏 -->
+        <div
+          style="height: 50px; width: 250px; color: #a2a2a2"
+          class="Baise mg8 Yy xian zi2"
+        >
+          密码
+        </div>
+      </div>
+      <!-- 点击栏 -->
+      <div
+        style="
+          height: 50px;
+          width: 250px;
+          background-color: #94c1ff;
+          color: rgb(227, 227, 227);
+        "
+        class="mg8 Yy xian zi bold-text yiebian"
+      >
+        Next
+      </div>
+    </div>
+    <script>
+      var box = document.querySelector("div");
+      var clientW = document.documentElement.clientWidth;
+      var clientH = document.documentElement.clientHeight;
+      var boxW = box.offsetWidth;
+      var boxH = box.offsetHeight;
+      box.style.left = (clientW - boxW) / 2 + "px";
+      box.style.top = (clientH - boxH) / 2 + "px";
+    </script>
+  </body>
+</html>

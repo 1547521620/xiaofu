@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ffcccc, #ffffff);
+    /* 从左上角到右下角颜色渐变 */
+  }
+
+  /*
+    * {
+      border: 1px solid #333;
+    } */
+  #logo {
+    top: 15px;
+    left: 75px;
+    width: 100px;
+    border-radius: 50%;
+    /* 将logo变成圆形 */
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Baise {
+    background-color: #ffffff;
+  }
+
+  .color {
+    flex-direction: column;
+  }
+
+  .Yy {
+    box-shadow: rgb(0 0 0 / 30%) 0px 2px 1px -1px,
+      rgb(0 0 0 / 20%) 0px 1px 1px 0px, rgb(0 0 0 / 25%) 0px 1px 3px 0px;
+    border-radius: 8px;
+  }
+
+  .mg8 {
+    margin: 8px;
+  }
+
+  .a {
+    height: 50px;
+    width: 100px;
+    margin-bottom: 28px;
+    background-image: linear-gradient(to right bottom, #ffd2db, #ffffff);
+  }
+
+  .a:hover {
+    background-image: linear-gradient(to right bottom, #ff93a9, #ffcbcb);
+  }
+
+  #video-bg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 可以根据需要设置高度 */
+  }
+
+  img {
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  dialog {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 10px;
+  }
+
+  .box1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .ZI {
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    color: #c05563;
+  }
+
+  .zYY {
+    text-shadow: 2px 2px 2px #c5c5c5;
+    /* 水平偏移 垂直偏移 模糊半径 颜色 */
+  }
+
+  .mgt8 {
+    margin-top: 8px;
+  }
+
+  input[type="text"]:focus {
+    border: 2px solid rgb(237, 237, 255);
+    background-color: rgb(211, 244, 255);
+  }
+</style>
+
+<body>
+  <!-- 内容区（下面） -->
+  <div style="height: 635px; width: 150px" class="container img Yy Baise">
+    <!-- 侧边栏 -->
+    <div class="c2">
+      <img style="height: 90px; width:90px" class="Yy" id="logo" src="D:\尝试\小芙猫猫体.jpg" alt="Logo" />
+      <p style=" font-size:10%;margin-bottom: 8px;">小芙一起开启学习之旅</p>
+      <div class="ZI zYY Yy mg8 mgt8 Baise a">
+        <a href="跳转页学习.html" style="text-decoration: none; color: #c05563">学习</a>
+      </div>
+      <div class="ZI zYY Yy mg8 mgt8 Baise a">
+        <a href="跳转页生活.html" style="text-decoration: none; color: #c05563">生活</a>
+      </div>
+      <div class="ZI zYY Yy mg8 mgt8 Baise a">
+        <a href="跳转页运动.html" style="text-decoration: none; color: #c05563">运动</a>
+      </div>
+      <div class="ZI zYY Yy mg8 mgt8 Baise a">
+        <a href="评论区.html" style="text-decoration: none; color: #c05563">评论区</a>
+      </div>
+      <div class="ZI zYY Yy mg8 mgt8 Baise a">
+        <a href="互动.html" style="text-decoration: none; color: #c05563">小芙互动页</a>
+      </div>
+    </div>
+    <!--人物区 -->
+    <video id="video-bg" autoplay loop muted>
+      <source src="D:\尝试\p.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style="height: 100px; width: auto" class="container Yy Baise">
+    <div>
+      <p style="color: #c05563; font-size: 20px; text-align: center" class="zYY mg8">
+        小芙能帮你点什么吗？
+      </p>
+      <input style="width: 500px; height: 35px; margin-bottom: 28px" type="text" placeholder="向小芙发送消息..."
+        onkeydown="clearInput(event)" />
+      <button id="sendButton">发送</button>
+      <script>
+        document.getElementById("sendButton").onclick = function () {
+          var inputElement = document.querySelector('input[type="text"]');
+          inputElement.value = "";
+          // 在此处添加发送消息的逻辑
+          alert("消息已发送！小芙的对话功能还在开发中哟！");
+        };
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

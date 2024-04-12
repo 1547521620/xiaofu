@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>用户登录</title>
+  <style>
+    body {
+      margin: 0px;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #ffcccc, #ffffff);
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .column {
+      flex-direction: column;
+    }
+
+    .Baise {
+      background-color: white;
+    }
+
+    .Yy {
+      box-shadow: rgb(0 0 0 / 30%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 20%) 0px 1px 1px 0px, rgb(0 0 0 / 25%) 0px 1px 3px 0px;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .mg8 {
+      margin: 8px;
+    }
+
+    .JZ {
+      position: absolute;
+    }
+
+    .zi {
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .zi2 {
+      font-size: 14px;
+      line-height: 50px;
+      padding-left: 10px;
+    }
+
+    .yiebian {
+      align-items: flex-start;
+    }
+
+    .dialog {
+      width: 300px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .dialog-title {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .dialog-content {
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      height: 30px;
+      width: 250px;
+      padding: 5px;
+      border: 1px solid #a2a2a2;
+      border-radius: 5px;
+    }
+
+    .button {
+      cursor: pointer;
+      height: 50px;
+      width: 250px;
+      background-color: #94c1ff;
+      color: #e3e3e3;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height: 600px; width: 400px" class="flex column Baise Yy mg8 JZ">
+    <div style="height: 50px; width: 300px; color: rgb(90, 0, 48)" class="zi bold-text yiebian">
+      Welcome to 小芙卓灵!
+    </div>
+    <div style="height: 200px; width: 300px mg8 Yy">
+      <div class="Baise mg8 xian zi2">
+        <input type="text" placeholder="Username/用户名" />
+      </div>
+      <div class="Baise mg8 xian zi2">
+        <input type="password" placeholder="Password/密码" />
+      </div>
+    </div>
+    <div class="button" onclick="login()">Login</div>
+  </div>
+  <script>
+    var box = document.querySelector("div");
+    var clientW = document.documentElement.clientWidth;
+    var clientH = document.documentElement.clientHeight;
+    var boxW = box.offsetWidth;
+    var boxH = box.offsetHeight;
+    box.style.left = (clientW - boxW) / 2 + "px";
+    box.style.top = (clientH - boxH) / 2 + "px";
+
+    function login() {
+      var username = document.querySelector('input[type="text"]').value;
+      var password = document.querySelector('input[type="password"]').value;
+
+      // 这里可以添加登录验证逻辑，比如与预设的用户名密码进行比较
+      if (username === "xfzl" && password === "123456") {
+        alert("Login successful!");
+        // 登录成功后跳转到另一个页面
+        window.location.href = "访问页.html";
+      } else {
+        alert(
+          "Login failed. Please check your username and password.用户名或密码错误，请重新输入。"
+        );
+      }
+    }
+  </script>
+</body>
+
+</html>

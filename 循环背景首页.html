@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cool Homepage</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #ffcccc, #ffffff);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite, gradient 10s ease infinite;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .fade-in-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .fade-in-out.active {
+      opacity: 1;
+    }
+
+    #video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    #logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      border-radius: 50%;
+      /* 将logo变成圆形 */
+      z-index: 1;
+      border: #cdcdcd solid 2px;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 180%);
+      text-align: center;
+      color: #330000;
+      z-index: 1;
+    }
+
+    .zi {
+      text-decoration: none;
+      color: #400000;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="video-bg" autoplay loop muted>
+    <source src="D:\尝试\p.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <img style="height: 100px; width: 100px" id="logo" src="D:\尝试\小芙你好.jpg" alt="Logo" />
+  <div class="content">
+    <a href="成功的登录.html" class="zi">
+      <h1>Welcome to Our Xiaofu Xindelu</h1>
+    </a>
+    <p>
+      Xiaofu Xindelu is a mini program that focuses on adaptive education
+      platforms.
+    </p>
+  </div>
+  <script>
+    document.querySelector(".zi").addEventListener("click", function (event) {
+      event.preventDefault(); // 阻止默认链接跳转行为
+      document.querySelector(".content").classList.add("fade-in-out");
+
+      setTimeout(function () {
+        window.location.href = "成功的登录.html"; // 在淡入效果完成后进行页面跳转
+      }, 500); // 等待0.5秒
+    });
+  </script>
+</body>
+
+</html>
